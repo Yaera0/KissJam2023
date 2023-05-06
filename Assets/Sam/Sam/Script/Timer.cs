@@ -8,6 +8,18 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    bool decompteOn;
+
+    private void Start()
+    {
+        decompteOn = true;
+    }
+
+    public void decompteOff()
+    {
+        decompteOn = false;
+    }
+
     public float TimeLeft = 60;
     public TMP_Text TimerText;
     void Update()
@@ -19,7 +31,10 @@ public class Timer : MonoBehaviour
         catch { }
         
         Debug.Log(GameObject.FindGameObjectWithTag("Finish") == null);
-        TimeLeft -= Time.deltaTime;
+        if(decompteOn)
+        {
+            TimeLeft -= Time.deltaTime;
+        }
         string TimeString = TimeLeft.ToString();
         TimeString = string.Format("{0:00}", TimeLeft);
         TimerText.SetText(""+ TimeString);
