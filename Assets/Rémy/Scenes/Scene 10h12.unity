@@ -3193,7 +3193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeLeft: 60
-  TimerText: {fileID: 0}
+  TimerText: {fileID: 963978552}
 --- !u!1 &869286975
 GameObject:
   m_ObjectHideFlags: 0

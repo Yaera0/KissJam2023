@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuGameOver : MonoBehaviour
@@ -31,6 +32,10 @@ public class MenuGameOver : MonoBehaviour
             if(alpha< 0.5)
             {
                 alpha += Time.deltaTime * 0.1f;
+            }
+            else
+            {
+                SceneManager.LoadScene(4);
             }
             baseColor = Color.red;
             baseColor.a = alpha;    
