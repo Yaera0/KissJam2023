@@ -28,22 +28,25 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if(scGameOver)
+        if(player != null)
         {
-            if(!gameOverStarted)
+            if (scGameOver)
             {
-                gameOverStarted= true;
-                AudioSource.Stop();
-                AudioSource.PlayOneShot(songGameOver);
+                if (!gameOverStarted)
+                {
+                    gameOverStarted = true;
+                    AudioSource.Stop();
+                    AudioSource.PlayOneShot(songGameOver);
+                }
+            }
+            else
+            {
+                if (player.GetComponent<PlayerController>().vie <= 0)
+                {
+                    scGameOver = true;
+                }
             }
         }
-        else
-        {
-            if(player.GetComponent<PlayerController>().vie <= 0)
-            {
-                scGameOver= true;
-            }
-        }
+        
     }
 }

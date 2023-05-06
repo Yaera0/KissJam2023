@@ -22,7 +22,6 @@ public class ClementineComponent : MonoBehaviour
         catchSt= false;
     }
 
-
     // Update is called once per frame
     void Update()
     {
@@ -68,7 +67,8 @@ public class ClementineComponent : MonoBehaviour
         if(inc == -2)
         {
             this.transform.Translate(Vector3.up * Time.deltaTime * 20);
-            if(this.tag == "Finish") this.tag = null;
+            if (transform.position.y > 10) Destroy(this.gameObject);
+            
         }
 
         //Suivi du joueur

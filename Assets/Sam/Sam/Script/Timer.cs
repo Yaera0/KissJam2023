@@ -12,7 +12,12 @@ public class Timer : MonoBehaviour
     public TMP_Text TimerText;
     void Update()
     {
-        Debug.Log(GameObject.FindGameObjectWithTag("Finish"));
+        try
+        {
+            Debug.Log(GameObject.FindGameObjectWithTag("Finish").name);
+        }
+        catch { }
+        
         Debug.Log(GameObject.FindGameObjectWithTag("Finish") == null);
         TimeLeft -= Time.deltaTime;
         string TimeString = TimeLeft.ToString();

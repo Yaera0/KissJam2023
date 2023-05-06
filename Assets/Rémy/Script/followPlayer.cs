@@ -28,6 +28,7 @@ public class followPlayer : MonoBehaviour
         else if (inc == -2)
         {
             this.transform.Translate(Vector3.up * Time.deltaTime * 20);
+            if (this.transform.position.y > 10) Destroy(this.gameObject);
         }
         else
         {
