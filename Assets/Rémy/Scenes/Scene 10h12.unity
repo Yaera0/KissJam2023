@@ -3192,6 +3192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20378c3532d01f547b5515fa55171c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decompteOn: 0
   TimeLeft: 60
   TimerText: {fileID: 963978552}
 --- !u!1 &552180090 stripped
@@ -3514,7 +3515,6 @@ GameObject:
   - component: {fileID: 963978550}
   - component: {fileID: 963978553}
   - component: {fileID: 963978552}
-  - component: {fileID: 963978551}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3542,20 +3542,6 @@ RectTransform:
   m_AnchoredPosition: {x: 49.736027, y: 0}
   m_SizeDelta: {x: 100.5279, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &963978551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963978549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20378c3532d01f547b5515fa55171c5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimeLeft: 60
-  TimerText: {fileID: 963978552}
 --- !u!114 &963978552
 MonoBehaviour:
   m_ObjectHideFlags: 0

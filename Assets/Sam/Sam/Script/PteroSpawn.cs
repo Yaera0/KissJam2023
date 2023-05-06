@@ -127,7 +127,5 @@ public class PteroSpawn : MonoBehaviour
             mobCap = 9;
         }
 
-        Debug.Log(difficulty);
-
     }
 }

@@ -50,7 +50,6 @@ public class RoarManager : MonoBehaviour
         {
             int random = Random.Range(0, dino.Length);
             Roar(dino[random]);
-            Debug.Log($"dino :{random}");
         }
     }
 }

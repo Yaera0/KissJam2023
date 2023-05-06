@@ -8,33 +8,24 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    bool decompteOn;
+    public bool decompteOn;
 
     private void Start()
     {
         decompteOn = true;
     }
 
-    public void decompteOff()
-    {
-        decompteOn = false;
-    }
-
     public float TimeLeft = 60;
     public TMP_Text TimerText;
     void Update()
     {
-        try
-        {
-            Debug.Log(GameObject.FindGameObjectWithTag("Finish").name);
-        }
-        catch { }
-        
-        Debug.Log(GameObject.FindGameObjectWithTag("Finish") == null);
+
         if(decompteOn)
         {
             TimeLeft -= Time.deltaTime;
+            Debug.Log("condition");
         }
+        
         string TimeString = TimeLeft.ToString();
         TimeString = string.Format("{0:00}", TimeLeft);
         TimerText.SetText(""+ TimeString);
