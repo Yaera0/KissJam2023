@@ -25,6 +25,7 @@ public class ClementineComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //Chute
         if(inc != -1 && !catchSt)
         {

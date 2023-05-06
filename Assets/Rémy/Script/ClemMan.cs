@@ -29,7 +29,20 @@ public class ClemMan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.GetComponent<PlayerController>().vie < 2)
+        try
+        {
+            foreach (GameObject go in Queue)
+            {
+                if (go == null) DestroyQueue();
+            }
+        }
+        catch
+        {
+            DestroyQueue();
+        }
+
+
+        if (player.GetComponent<PlayerController>().vie < 2)
         {
             canAppear= true;
         }
