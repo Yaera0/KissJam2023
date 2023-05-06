@@ -12,17 +12,22 @@ public class Timer : MonoBehaviour
     public TMP_Text TimerText;
     void Update()
     {
+        Debug.Log(GameObject.FindGameObjectWithTag("Finish"));
+        Debug.Log(GameObject.FindGameObjectWithTag("Finish") == null);
         TimeLeft -= Time.deltaTime;
         string TimeString = TimeLeft.ToString();
         TimeString = string.Format("{0:00}", TimeLeft);
         TimerText.SetText(""+ TimeString);
         if (TimeLeft < 0.1)
         {
-            if (GameObject.FindGameObjectWithTag("Finish")) 
+            if (GameObject.FindGameObjectWithTag("Finish")==null) 
              {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+                SceneManager.LoadScene(3);
              }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
     }
 }

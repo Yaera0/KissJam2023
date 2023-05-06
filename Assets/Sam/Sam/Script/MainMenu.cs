@@ -14,9 +14,21 @@ public class MainMenu : MonoBehaviour
     {
 
         PlayerPrefs.SetFloat("DifficultyStat",button.GetComponent<DifficultyManagement>().difficultyLevel);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);// this can load the scene number 1 (game)//SceneManager.GetActiveScene().buildIndex +1
+        SceneManager.LoadScene(1);// this can load the scene number 1 (game)//SceneManager.GetActiveScene().buildIndex +1
 
 
+    }
+
+    public void ReplayGame()
+    {
+        SceneManager.LoadScene(1);//replays the level without re-setting the difficulty
+    }
+
+    public void RestartGame() //restarts and re-sets the difficulty
+    {
+
+        PlayerPrefs.SetFloat("DifficultyStat", 1);
+        SceneManager.LoadScene(0);
     }
     public void QuitGame()
     {
