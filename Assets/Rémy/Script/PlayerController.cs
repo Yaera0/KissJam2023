@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     float speed = 5;
     public int inc;
     public int vie;
+    bool once;
 
     //Animation
     Animator animator;
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
         player = this.gameObject;
         animator = GetComponent<Animator>();
         vie = 1;
+        once = false;
     }
 
     // Update is called once per frame
@@ -172,11 +174,12 @@ public class PlayerController : MonoBehaviour
             }
 
         //vie
-        if (vie <= 0)
+        if (vie <= 0 && !once)
         {
-            animator.SetInteger("AnimePar", 9);
-            control = false;
-            MenuGameOver.GetComponent<MenuGameOver>().GameOver= true;
+                once = true;
+                animator.SetInteger("AnimePar", 9);
+                control = false;
+                MenuGameOver.GetComponent<MenuGameOver>().GameOver = true;
         }
     }
 
