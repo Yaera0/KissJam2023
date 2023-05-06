@@ -68,6 +68,7 @@ public class ClementineComponent : MonoBehaviour
         if(inc == -2)
         {
             this.transform.Translate(Vector3.up * Time.deltaTime * 20);
+            if(this.tag == "Finish") this.tag = null;
         }
 
         //Suivi du joueur
@@ -82,7 +83,7 @@ public class ClementineComponent : MonoBehaviour
                 Vector3 dir = target.transform.position - transform.position;
                 if (dir.magnitude > 0.25)
                 {
-                    transform.Translate(dir.normalized * 10 * Time.deltaTime);
+                    transform.Translate(dir.normalized * 5 * Time.deltaTime);
                 }
                 
             }
