@@ -177,6 +177,7 @@ public class PlayerController : MonoBehaviour
             animator.SetInteger("AnimePar", 9);
             control = false;
             MenuGameOver.GetComponent<MenuGameOver>().GameOver= true;
+
         }
     }
 

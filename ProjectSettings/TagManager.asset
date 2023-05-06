@@ -12,6 +12,7 @@ TagManager:
   - Lac
   - Arbre
   - MenuGameOver
+  - AudioManager
   layers:
   - Default
   - TransparentFX

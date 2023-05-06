@@ -54,6 +54,8 @@ MonoBehaviour:
   songGameOver: {fileID: 8300000, guid: 6d47567e2878dd942b4cf0877eaf8506, type: 3}
   songGoodEnding: {fileID: 8300000, guid: b4b0628664b9c254f9fbcdfa213dbfef, type: 3}
   songBadEnding: {fileID: 8300000, guid: fd89ca35f19676948b24daf5b7ea04a5, type: 3}
+  clementimeApp: {fileID: 8300000, guid: 1a8df252e050d9b4799652a4b1172b7a, type: 3}
+  mandarineGameOver: {fileID: 8300000, guid: 24b59500de062284389b38cf66acfe2b, type: 3}
   scGameOver: 0
 --- !u!82 &7702217892898559656
 AudioSource:

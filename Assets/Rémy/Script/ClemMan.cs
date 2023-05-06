@@ -46,7 +46,8 @@ public class ClemMan : MonoBehaviour
             }
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().vie=2;
             Instantiate(Clementine, transform.position, Quaternion.identity);
-            
+            GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().clemmApp();
+
         }
 
         if (canAppear)
@@ -61,11 +62,12 @@ public class ClemMan : MonoBehaviour
 
     void spawnClementineQuarter(int numberQuarter)
     {
-            ClementinePos[0].transform.position = new Vector3(UnityEngine.Random.Range(-7.75f, 7.75f), UnityEngine.Random.Range(-3.75f, 3.75f), 0);
+            ClementinePos[0].transform.position = new Vector3(UnityEngine.Random.Range(-7.75f, 3.75f), UnityEngine.Random.Range(-3.75f, 3.75f), 0);
             clementineQuarterPrefab.transform.position = ClementinePos[0].transform.position + UnityEngine.Random.Range(25, 15) * Vector3.up;
             clementineQuarterPrefab.GetComponent<ClementineComponent>().spawnPoint = ClementinePos[0].transform.position;
             buffer = clementineQuarterPrefab;
             Instantiate(buffer);
+        
     }
 
     public GameObject assign(GameObject gameOb)
@@ -85,19 +87,22 @@ public class ClemMan : MonoBehaviour
 
     public void DestroyQueue()
     {
-
-        foreach (GameObject gameOb in Queue)
+        if(Queue.Count > 0)
         {
-            try
+            foreach (GameObject gameOb in Queue)
             {
-                gameOb.GetComponent<ClementineComponent>().inc = -2;
+                try
+                {
+                    gameOb.GetComponent<ClementineComponent>().inc = -2;
+                }
+                catch
+                {
+                    Queue.Clear();
+                }
+
             }
-            catch
-            {
-                Queue.Clear();
-            }
-            
         }
+
 
         Queue.Clear();
     }
