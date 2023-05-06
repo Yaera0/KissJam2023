@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/R\xE9my/Scenes/Scene 10h12.unity"
     guid: c93f2d0035a741c4f9df0e43f323258c
+  - enabled: 1
+    path: Assets/Sam/Sam/Scene/GoodEnding.unity
+    guid: 70abc42df6f11cd43b9a055fad36ed47
+  - enabled: 1
+    path: Assets/Sam/Sam/Scene/BadEnding.unity
+    guid: 59dbcd51655974046957b76813e8f1ef
   m_configObjects: {}
