@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7347135789575416725}
   - component: {fileID: 4777536128832334198}
   - component: {fileID: 4168647039293398296}
-  - component: {fileID: -6258587111775213066}
   - component: {fileID: 2213474048270428572}
   - component: {fileID: 7814628484428406060}
+  - component: {fileID: 4370886050328438582}
+  - component: {fileID: 3830659072490558607}
   m_Layer: 0
   m_Name: PteroMob
   m_TagString: Ptero
@@ -101,37 +102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
---- !u!60 &-6258587111775213066
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5083520278510299388}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.1875, y: 1}
-      - {x: -1, y: 0.3125}
-      - {x: -1, y: -0.5}
-      - {x: 1, y: -0.5}
-      - {x: 1, y: 0.6875}
-      - {x: 0.625, y: 1}
 --- !u!50 &2213474048270428572
 Rigidbody2D:
   serializedVersion: 4
@@ -173,3 +143,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &4370886050328438582
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5083520278510299388}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.22, y: 0.08}
+  m_Size: {x: 0.93, y: 0.78}
+  m_Direction: 1
+--- !u!70 &3830659072490558607
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5083520278510299388}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.58, y: 0.1}
+  m_Size: {x: 0.67, y: 0.26}
+  m_Direction: 1

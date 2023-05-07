@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sam/Sam/Scene/DeathEnding.unity
     guid: 9616eec7625ed5c47bc63293b08b1ea3
+  - enabled: 1
+    path: Assets/Sam/Sam/Scene/StartSceneAnim.unity
+    guid: 536496c647e7d2e4ea7318108bdb2e12
   m_configObjects: {}
