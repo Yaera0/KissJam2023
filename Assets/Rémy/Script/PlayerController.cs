@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class PlayerController : MonoBehaviour
 {
     //Control
-    [SerializeField] bool clavier;
+    public bool clavier;
     bool control;
     bool trebucheB;
     Vector3 dir, calculDir;

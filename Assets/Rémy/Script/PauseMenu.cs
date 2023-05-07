@@ -11,6 +11,10 @@ public class PauseMenu : MonoBehaviour
     {
         
     }
+    public void unPause()
+    {
+        if(pause)pause=false;
+    }
 
     // Update is called once per frame
     void Update()
