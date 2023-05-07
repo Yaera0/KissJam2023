@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     //Control
     public bool clavier;
+    public float controller; //1 = clavier, 2 = controller
     bool control;
     bool trebucheB;
     Vector3 dir, calculDir;
