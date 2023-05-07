@@ -26,6 +26,16 @@ public class CanevasPauseManager : MonoBehaviour
         {
             player.GetComponent<PlayerController>().clavier = true;
         }
+
+        if (player.GetComponent<PlayerController>().controller == 1)
+        {
+            PlayerPrefs.SetFloat("controller", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("controller", 2);
+        }
+
     }
 
     public void Unpause()

@@ -35,6 +35,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.GetFloat("controller", 1) == 2)
+        {
+            clavier = false;
+        }
+        else { clavier = true; }
         audioSource= GetComponent<AudioSource>();
         control = true;
         inc = 0;
