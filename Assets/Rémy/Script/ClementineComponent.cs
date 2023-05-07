@@ -14,8 +14,11 @@ public class ClementineComponent : MonoBehaviour
     public GameObject target;
     bool catchSt;
 
+    AudioSource audioSource;
+    [SerializeField] List<AudioClip> effectList;
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         followTarget = false;
         player = GameObject.FindGameObjectWithTag("Player");
         speed = 0;
@@ -112,6 +115,8 @@ public class ClementineComponent : MonoBehaviour
             followTarget = true;
             target = collision.gameObject.transform.GetChild(0).GetComponent<ClemMan>().assign(this.gameObject);
             catchSt= true;
+            audioSource.PlayOneShot(effectList[Mathf.RoundToInt(UnityEngine.Random.Range(0,effectList.Count))]);
+           
         }
         if(collision.tag == "Ptero")
         {

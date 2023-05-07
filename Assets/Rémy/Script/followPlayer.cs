@@ -8,14 +8,20 @@ public class followPlayer : MonoBehaviour
     GameObject player;
     public int inc;
 
+    //Sound
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip clip;
+    bool songPlayed;
     //animation
     Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource= GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         inc = 0;
         animator = GetComponent<Animator>();
+        songPlayed= false;
     }
 
     // Update is called once per frame
@@ -24,11 +30,18 @@ public class followPlayer : MonoBehaviour
         if (player == null && inc != -2)
         {
             inc = -2;
+            
         }
         else if (inc == -2)
         {
             this.transform.Translate(Vector3.up * Time.deltaTime * 20);
+            if (!songPlayed)
+            {
+                songPlayed = true;
+                audioSource.PlayOneShot(clip);
+            }
             if (this.transform.position.y > 10) Destroy(this.gameObject);
+
         }
         else
         {

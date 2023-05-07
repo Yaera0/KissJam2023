@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     float speed = 5;
     public int inc;
     public int vie;
+    bool invi;
 
     //Animation
     Animator animator;
@@ -213,15 +214,28 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    IEnumerator invissibilite()
+    {
+        invi = true;
+        yield return new WaitForSeconds(0.5f);
+        invi= false;
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Ptero" || collision.tag == "Ptero" || collision.tag == "Tripy")
         {
-            vie--;
-            if (vie == 1)
+            if (!invi)
             {
-                GameObject.FindGameObjectWithTag("Finish").GetComponent<followPlayer>().inc = -2;
+                vie--;
+                if (vie == 1)
+                {
+                    GameObject.FindGameObjectWithTag("Finish").GetComponent<followPlayer>().inc = -2;
+                    StartCoroutine("invissibilite");
+                }
             }
+            
         }
         else if (collision.tag == "Arbre" || collision.tag == "Rocher")
         {

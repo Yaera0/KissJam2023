@@ -45,7 +45,7 @@ public class Timer : MonoBehaviour
         
         string TimeString = TimeLeft.ToString();
         TimeString = string.Format("{0:00}", TimeLeft);
-        TimerText.SetText($"Temps restant avant papi orange: {TimeString}");
+        TimerText.SetText($"Time Left before Grandpa's carnage: {TimeString}");
         if (TimeLeft < 0.1)
         {
             if (GameObject.FindGameObjectWithTag("Finish")==null) 
