@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clavier: 1
+  controller: 0
   trebucheClip: {fileID: 8300000, guid: 1a4363ea20c36384886315e10080dec3, type: 3}
   player: {fileID: 0}
   inc: 0
