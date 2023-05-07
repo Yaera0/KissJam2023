@@ -13,7 +13,12 @@ public class PauseMenu : MonoBehaviour
     }
     public void unPause()
     {
-        if(pause)pause=false;
+        if (pause)
+        {
+            pause = false;
+            Time.timeScale = 1.0f;
+            canvasPause.SetActive(false);
+        }
     }
 
     // Update is called once per frame

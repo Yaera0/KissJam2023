@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     Vector3 dir, calculDir;
     float decompteDir;
 
+    AudioSource audioSource;
+    [SerializeField] AudioClip trebucheClip;
+
     //Parameters
     [SerializeField] GameObject player;
     float horVal,verVal;
@@ -24,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     //Animation
     Animator animator;
+    
 
     //UI
     [SerializeField] GameObject MenuGameOver;
@@ -31,6 +35,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource= GetComponent<AudioSource>();
         control = true;
         inc = 0;
         player = this.gameObject;
@@ -240,16 +245,18 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.tag == "Arbre" || collision.tag == "Rocher")
         {
-            trebuche();
+            trebuchefct();
         }
     }
 
-    void trebuche()
+    void trebuchefct()
     {
+        audioSource.PlayOneShot(trebucheClip);
         control = false;
         trebucheB = true;
         animator.SetBool("trebuche", true);
         StartCoroutine("trebucheStop");
+        
     }
     IEnumerator trebucheStop()
     {
