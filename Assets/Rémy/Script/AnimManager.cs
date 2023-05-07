@@ -45,7 +45,14 @@ public class AnimManager : MonoBehaviour
                 
                 flouC.a = buf;
                 buf -= Time.deltaTime / 5;
-                flou.GetComponent<Image>().color = flouC;
+                try
+                {
+                    flou.GetComponent<Image>().color = flouC;
+                }
+                catch
+                {
+                    flouB = false;
+                }
             }
             
         }
