@@ -48,7 +48,7 @@ public class followPlayer : MonoBehaviour
             Vector3 dir = player.transform.position - transform.position;
             if (dir.magnitude >1)
             {
-                transform.Translate(dir.normalized * 10 * Time.deltaTime);
+                transform.Translate(dir.normalized * 5 * Time.deltaTime);
 
                 if (Vector3.Angle(dir, Vector3.up)<90)
                 {

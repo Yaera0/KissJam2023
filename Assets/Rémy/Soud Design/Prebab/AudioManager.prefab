@@ -52,6 +52,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 188f827faf5b5ba4db3d1592281ed57c, type: 3}
   - {fileID: 8300000, guid: 1a4ba21a2c287134e805cbf5d9d3fb72, type: 3}
   songGameOver: {fileID: 8300000, guid: 6d47567e2878dd942b4cf0877eaf8506, type: 3}
+  songGameOver2: {fileID: 8300000, guid: dd12adb9990db1848b823d3b1d507097, type: 3}
   songGoodEnding: {fileID: 8300000, guid: b4b0628664b9c254f9fbcdfa213dbfef, type: 3}
   songBadEnding: {fileID: 8300000, guid: fd89ca35f19676948b24daf5b7ea04a5, type: 3}
   clementimeApp: {fileID: 8300000, guid: 1a8df252e050d9b4799652a4b1172b7a, type: 3}

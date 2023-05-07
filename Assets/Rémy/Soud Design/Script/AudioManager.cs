@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioClip songMenu;
     [SerializeField] List<AudioClip> gameSong;
-    [SerializeField] AudioClip songGameOver,songGoodEnding,songBadEnding;
+    [SerializeField] AudioClip songGameOver,songGameOver2,songGoodEnding,songBadEnding;
     [SerializeField] AudioClip clementimeApp,mandarineGameOver;
 
     GameObject player;
@@ -23,8 +23,9 @@ public class AudioManager : MonoBehaviour
         int index = SceneManager.GetActiveScene().buildIndex;
         if (index == 0) audioSource.PlayOneShot(songMenu);
         else if (index == 1) audioSource.PlayOneShot(gameSong[Mathf.RoundToInt(Random.Range(0, gameSong.Count))]);
-        else if (index == 2) audioSource.PlayOneShot(songGoodEnding);
-        else if (index == 3) audioSource.PlayOneShot(songBadEnding);
+        else if (index == 3) audioSource.PlayOneShot(songGoodEnding);
+        else if (index == 4) audioSource.PlayOneShot(songBadEnding);
+        else if (index == 5) audioSource.PlayOneShot(songGameOver2);
     }
 
     public void clemmApp()
