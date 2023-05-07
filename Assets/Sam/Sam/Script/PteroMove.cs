@@ -6,6 +6,7 @@ public class PteroMove : MonoBehaviour
 {
     //param
     public GameObject spawner;
+    public float factorSpeed;
     float speed = 5f;
     float speedDown = 3f;
     bool goingLeft = true;
@@ -24,8 +25,8 @@ public class PteroMove : MonoBehaviour
     {
         if (goingLeft)
         {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
-            transform.Translate(Vector2.down * speedDown * Time.deltaTime);
+            transform.Translate(Vector2.left * factorSpeed* speed * Time.deltaTime);
+            transform.Translate(Vector2.down * factorSpeed* speedDown * Time.deltaTime);
             if (this.transform.position.x < -10 || this.transform.position.y < -7)
             {
                 spawner.GetComponent<PteroSpawn>().mobCount--;
@@ -35,8 +36,8 @@ public class PteroMove : MonoBehaviour
         }
         if (!goingLeft)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-            transform.Translate(Vector2.down * speedDown * Time.deltaTime);
+            transform.Translate(Vector2.right * factorSpeed * speed * Time.deltaTime);
+            transform.Translate(Vector2.down * factorSpeed * speedDown * Time.deltaTime);
             if (this.transform.position.x > 10 || this.transform.position.y < -7)
             {
                 spawner.GetComponent<PteroSpawn>().mobCount--;

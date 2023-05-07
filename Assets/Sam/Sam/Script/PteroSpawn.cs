@@ -22,6 +22,8 @@ public class PteroSpawn : MonoBehaviour
     [SerializeField] GameObject veloMob;
     GameObject buffer;
     float decompte = 60;
+    [SerializeField] float factorSpeed;
+    float difficulty;
     // Start is called before the first frame update
 
     private void Awake()
@@ -31,19 +33,33 @@ public class PteroSpawn : MonoBehaviour
 
     void Start()
     {
+        try
+        {
+            difficulty = PlayerPrefs.GetFloat("DifficultyStat");
+        }
+        catch 
+        {
+            difficulty = 1;
+        }
+        
+
+        if(difficulty ==1) factorSpeed= 0.7f;
+        if(difficulty ==2) factorSpeed= 0.9f;
+        if(difficulty ==3) factorSpeed= 1.2f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float difficulty = PlayerPrefs.GetFloat("DifficultyStat");
-    decompte -= Time.deltaTime;
+        
+        decompte -= Time.deltaTime;
 
         float randomDyno = UnityEngine.Random.Range(1, 9);
 
         if (decompte < 55 && mobCount < mobCap && randomDyno < 3 && pteroCount < singleMobCap)// PTERODACTYL
         {
             pterodactylMob.GetComponent<PteroMove>().spawner = this.gameObject;
+            pterodactylMob.GetComponent<PteroMove>().factorSpeed = factorSpeed;
             buffer = pterodactylMob;
 
             float randomSide = UnityEngine.Random.Range(0, 2);
@@ -65,6 +81,7 @@ public class PteroSpawn : MonoBehaviour
         if (decompte < 58 && mobCount < mobCap && randomDyno > 3 && randomDyno < 6 && tripyCount < singleMobCap)// TRICERATOPS
         {
             tripyMob.GetComponent<TripyMove>().spawner = this.gameObject;
+            tripyMob.GetComponent<TripyMove>().factorSpeed = factorSpeed;
             buffer = tripyMob;
 
             float randomSide = UnityEngine.Random.Range(0, 2);
@@ -85,6 +102,7 @@ public class PteroSpawn : MonoBehaviour
         if (decompte < 50 && mobCount < mobCap && randomDyno > 6 && trexCount < singleMobCap)// T REX
         {
             veloMob.GetComponent<TrexMove>().spawner = this.gameObject;
+            veloMob.GetComponent<TrexMove>().factorSpeed = factorSpeed;
             buffer = veloMob;
 
             Vector2 randomPosVelo = new Vector2(UnityEngine.Random.Range(-7,7), UnityEngine.Random.Range(7,8));

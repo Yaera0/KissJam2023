@@ -6,6 +6,7 @@ public class TripyMove : MonoBehaviour
 {
     //param
     public GameObject spawner;
+    public float factorSpeed;
     float speed = 3f;
     bool goingLeft = true;
     // Start is called before the first frame update
@@ -25,7 +26,7 @@ public class TripyMove : MonoBehaviour
         if (goingLeft)
         {
 
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.Translate(Vector2.left * factorSpeed * speed * Time.deltaTime);
             if (this.transform.position.x < -10 || this.transform.position.y < -7)
             {
                 spawner.GetComponent<PteroSpawn>().mobCount--;
@@ -37,7 +38,7 @@ public class TripyMove : MonoBehaviour
         if (goingLeft == false)
         {
 
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * factorSpeed * speed * Time.deltaTime);
             if (this.transform.position.x > 10 || this.transform.position.y < -7)
             {
                 spawner.GetComponent<PteroSpawn>().mobCount--;

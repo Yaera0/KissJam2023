@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 818ad7e6dc0c3cb4f97ea7bb81170071, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,3 +105,4 @@ MonoBehaviour:
   pterodactylMob: {fileID: 5083520278510299388, guid: 93c76392cdd6a294cb4159a244108fd5, type: 3}
   tripyMob: {fileID: 626197648748826497, guid: d4d1267ae80011a40bb53b5adbc4b32e, type: 3}
   veloMob: {fileID: 2032326211485550167, guid: c7bb2d95f5ecc654bb0c5446ec17a28f, type: 3}
+  factorSpeed: 0

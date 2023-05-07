@@ -8,11 +8,17 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    AudioSource audioSource;
+    [SerializeField] AudioClip rumble;
+    bool once;
+
     public bool decompteOn;
 
     private void Start()
     {
         decompteOn = true;
+        once=false;
+        audioSource= GetComponent<AudioSource>();
     }
 
     public float TimeLeft = 60;
@@ -23,21 +29,32 @@ public class Timer : MonoBehaviour
         if(decompteOn)
         {
             TimeLeft -= Time.deltaTime;
-            Debug.Log("condition");
         }
+        if (TimeLeft < 30 && !once)
+        {
+            once = true;
+            audioSource.PlayOneShot(rumble);
+            audioSource.volume = 0;
+        }
+        else if(TimeLeft < 30 && once)
+        {
+            audioSource.volume += Time.deltaTime/15;
+        }
+
+
         
         string TimeString = TimeLeft.ToString();
         TimeString = string.Format("{0:00}", TimeLeft);
-        TimerText.SetText(""+ TimeString);
+        TimerText.SetText($"Temps restant avant papi orange: {TimeString}");
         if (TimeLeft < 0.1)
         {
             if (GameObject.FindGameObjectWithTag("Finish")==null) 
              {
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(4);
              }
             else
             {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(3);
             }
         }
     }
