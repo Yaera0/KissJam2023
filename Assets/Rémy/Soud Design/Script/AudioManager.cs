@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         int index = SceneManager.GetActiveScene().buildIndex;
         if (index == 0) audioSource.PlayOneShot(songMenu);
-        else if (index == 1) audioSource.PlayOneShot(gameSong[Mathf.RoundToInt(Random.Range(0, gameSong.Count))]);
+        else if (index == 2) audioSource.PlayOneShot(gameSong[Mathf.RoundToInt(Random.Range(0, gameSong.Count))]);
         else if (index == 3) audioSource.PlayOneShot(songGoodEnding);
         else if (index == 4) audioSource.PlayOneShot(songBadEnding);
         else if (index == 5) audioSource.PlayOneShot(songGameOver2);
