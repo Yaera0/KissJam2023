@@ -9,17 +9,11 @@ EditorBuildSettings:
     path: Assets/Sam/Sam/Scene/Menu Tuto.unity
     guid: 319608074d4489840b9fcf9d6e76941d
   - enabled: 1
+    path: Assets/Sam/Sam/Scene/StartSceneAnim.unity
+    guid: 536496c647e7d2e4ea7318108bdb2e12
+  - enabled: 1
     path: "Assets/R\xE9my/Scenes/Scene 10h12.unity"
     guid: c93f2d0035a741c4f9df0e43f323258c
-  - enabled: 1
-    path: "Assets/R\xE9my/Scenes/GoodEndingAnimScene.unity"
-    guid: 9ebfd678850b94e4e88c1e58cca190d6
-  - enabled: 1
-    path: Assets/Sam/Sam/Scene/BadEndingAnimation.unity
-    guid: 73997ad7d722b5e41855071a567cc3da
-  - enabled: 1
-    path: "Assets/R\xE9my/Scenes/BadEndingScene.unity"
-    guid: 90895d683c7d4d84f966412b6c93e11b
   - enabled: 1
     path: Assets/Sam/Sam/Scene/GoodEnding.unity
     guid: 70abc42df6f11cd43b9a055fad36ed47
@@ -29,7 +23,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sam/Sam/Scene/DeathEnding.unity
     guid: 9616eec7625ed5c47bc63293b08b1ea3
-  - enabled: 1
-    path: Assets/Sam/Sam/Scene/StartSceneAnim.unity
-    guid: 536496c647e7d2e4ea7318108bdb2e12
   m_configObjects: {}

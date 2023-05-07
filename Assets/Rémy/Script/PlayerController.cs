@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
                     if (Input.anyKeyDown || Input.anyKey)
                     {
                         horVal = 0;
-                        clavier = true;
+                        //clavier = true;
                     }
 
                     if (Mathf.Abs(horVal) > 0.2)
@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
                     if (Input.anyKeyDown || Input.anyKey)
                     {
                         horVal = 0;
-                        clavier = true;
+                        //clavier = true;
                     }
 
                     if (Mathf.Abs(verVal) > 0.2)

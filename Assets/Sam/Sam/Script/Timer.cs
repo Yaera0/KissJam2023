@@ -50,11 +50,11 @@ public class Timer : MonoBehaviour
         {
             if (GameObject.FindGameObjectWithTag("Finish")==null) 
              {
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(4);
              }
             else
             {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(3);
             }
         }
     }

@@ -11,6 +11,7 @@ public class ClemMan : MonoBehaviour
     [SerializeField] GameObject clementineQuarterPrefab,Clementine;
     GameObject buffer;
     GameObject player;
+    float difficulty;
 
     //param
     int nombreDeQuartiers=7;
@@ -22,7 +23,21 @@ public class ClemMan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canAppear= true;
+        try
+        {
+            difficulty = PlayerPrefs.GetFloat("DifficultyStat");
+        }
+        catch
+        {
+            difficulty = 1;
+        }
+
+
+        if (difficulty == 1) nombreDeQuartiers = 5;
+        if (difficulty == 2) nombreDeQuartiers = 7;
+        if (difficulty == 3) nombreDeQuartiers = 9;
+
+        canAppear = true;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 

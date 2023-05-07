@@ -15,7 +15,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("joystick button 7"))
         {
             if (!pause)
             {
@@ -30,7 +30,9 @@ public class PauseMenu : MonoBehaviour
                 Time.timeScale = 1.0f;
                 canvasPause.SetActive(false);
             }
-            
         }
+            
+            
+        
     }
 }
