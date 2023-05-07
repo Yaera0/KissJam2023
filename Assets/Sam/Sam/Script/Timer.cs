@@ -8,11 +8,17 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    AudioSource audioSource;
+    [SerializeField] AudioClip rumble;
+    bool once;
+
     public bool decompteOn;
 
     private void Start()
     {
         decompteOn = true;
+        once=false;
+        audioSource= GetComponent<AudioSource>();
     }
 
     public float TimeLeft = 60;
@@ -24,6 +30,18 @@ public class Timer : MonoBehaviour
         {
             TimeLeft -= Time.deltaTime;
         }
+        if (TimeLeft < 30 && !once)
+        {
+            once = true;
+            audioSource.PlayOneShot(rumble);
+            audioSource.volume = 0;
+        }
+        else if(TimeLeft < 30 && once)
+        {
+            audioSource.volume += Time.deltaTime/15;
+        }
+
+
         
         string TimeString = TimeLeft.ToString();
         TimeString = string.Format("{0:00}", TimeLeft);

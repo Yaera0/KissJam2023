@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour
 
         if (trebucheB)
         {
-            transform.Translate(dir*10*Time.deltaTime);
+            transform.Translate(dir*10*Time.deltaTime,Space.World);
         }
 
         //vie
@@ -233,12 +233,13 @@ public class PlayerController : MonoBehaviour
     {
         control = false;
         trebucheB = true;
-
+        animator.SetBool("trebuche", true);
         StartCoroutine("trebucheStop");
     }
     IEnumerator trebucheStop()
     {
         yield return new WaitForSeconds(0.4f);
+        animator.SetBool("trebuche", false);
         trebucheB = false;
         StartCoroutine("trebucheStop2");
     }

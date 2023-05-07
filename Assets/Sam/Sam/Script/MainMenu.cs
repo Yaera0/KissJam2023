@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     {
 
         PlayerPrefs.SetFloat("DifficultyStat",button.GetComponent<DifficultyManagement>().difficultyLevel);
-        SceneManager.LoadScene(8);// this can load the scene number 1 (game)//SceneManager.GetActiveScene().buildIndex +1
+        SceneManager.LoadScene(1);// this can load the scene number 1 (game)//SceneManager.GetActiveScene().buildIndex +1
 
 
     }

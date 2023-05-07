@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TrexMove : MonoBehaviour
 {
+    //Instantiate
+    [SerializeField] GameObject pouf;
     //param
     public GameObject spawner;
     public float factorSpeed;
@@ -34,7 +36,9 @@ public class TrexMove : MonoBehaviour
             //Animation Crash
             spawner.GetComponent<PteroSpawn>().mobCount--;
             spawner.GetComponent<PteroSpawn>().trexCount--;
+            Instantiate(pouf, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+            
         }
         else if (collision.tag == "Lac")
         {

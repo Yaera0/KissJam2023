@@ -43,9 +43,9 @@ public class PteroSpawn : MonoBehaviour
         }
         
 
-        if(difficulty ==1) factorSpeed= 0.5f;
+        if(difficulty ==1) factorSpeed= 0.7f;
         if(difficulty ==2) factorSpeed= 1f;
-        if(difficulty ==3) factorSpeed= 2f;
+        if(difficulty ==3) factorSpeed= 1.3f;
     }
 
     // Update is called once per frame
