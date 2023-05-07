@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
     //Control
     [SerializeField] bool clavier;
     bool control;
+    bool trebucheB;
+    Vector3 dir, calculDir;
+    float decompteDir;
 
     //Parameters
     [SerializeField] GameObject player;
@@ -30,6 +34,7 @@ public class PlayerController : MonoBehaviour
         player = this.gameObject;
         animator = GetComponent<Animator>();
         vie = 1;
+        decompteDir= 0;
     }
 
     // Update is called once per frame
@@ -171,6 +176,11 @@ public class PlayerController : MonoBehaviour
 
             }
 
+        if (trebucheB)
+        {
+            transform.Translate(dir*10*Time.deltaTime);
+        }
+
         //vie
         if (vie <= 0)
         {
@@ -180,18 +190,63 @@ public class PlayerController : MonoBehaviour
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Timer>().decompteOn = false;
 
         }
+
+        //dir
+
+        dir = (transform.position - calculDir);
+        if (dir.magnitude > 0.01f)
+        {
+            dir = dir.normalized/2;
+        }
+        else
+        {
+            dir = Vector3.up/2;
+        }
+
+        decompteDir -= Time.deltaTime;
+        if(decompteDir< 0)
+        {
+            calculDir = transform.position;
+            decompteDir = 0.1f;
+        }
+        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Ptero" || collision.tag == "Ptero" || collision.tag == "Tripy")
+        if (collision.tag == "Ptero" || collision.tag == "Ptero" || collision.tag == "Tripy")
         {
             vie--;
-            if(vie==1)
+            if (vie == 1)
             {
                 GameObject.FindGameObjectWithTag("Finish").GetComponent<followPlayer>().inc = -2;
             }
         }
+        else if (collision.tag == "Arbre" || collision.tag == "Rocher")
+        {
+            trebuche();
+        }
+    }
+
+    void trebuche()
+    {
+        control = false;
+        trebucheB = true;
+
+        StartCoroutine("trebucheStop");
+    }
+    IEnumerator trebucheStop()
+    {
+        yield return new WaitForSeconds(0.4f);
+        trebucheB = false;
+        StartCoroutine("trebucheStop2");
+    }
+    IEnumerator trebucheStop2()
+    {
+        yield return new WaitForSeconds(0.1f);
+        control = true;
+        transform.SetLocalPositionAndRotation(this.transform.position, Quaternion.identity);
     }
 
 

@@ -21,6 +21,7 @@ public class MenuGameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (GameOver)
         {
             if (!ones)
@@ -28,8 +29,10 @@ public class MenuGameOver : MonoBehaviour
                 ones = true;
                 canvasGameOver.SetActive(true);
             }
-            
-            if(alpha< 0.5)
+            baseColor = Color.red;
+            baseColor.a = alpha;
+            canvasGameOver.transform.GetChild(0).GetComponent<Image>().color = baseColor;
+            if (alpha< 0.5)
             {
                 alpha += Time.deltaTime * 0.1f;
             }
@@ -37,9 +40,7 @@ public class MenuGameOver : MonoBehaviour
             {
                 SceneManager.LoadScene(4);
             }
-            baseColor = Color.red;
-            baseColor.a = alpha;    
-            canvasGameOver.transform.GetChild(0).GetComponent<Image>().color= baseColor;
+           
 
 
         }

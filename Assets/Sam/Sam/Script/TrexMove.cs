@@ -6,6 +6,7 @@ public class TrexMove : MonoBehaviour
 {
     //param
     public GameObject spawner;
+    public float factorSpeed;
     float speed = 7f;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class TrexMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.down * speed * Time.deltaTime);
+        transform.Translate(Vector2.down * factorSpeed * speed * Time.deltaTime);
         if (this.transform.position.x < -10 || this.transform.position.y < -7)
         {
             spawner.GetComponent<PteroSpawn>().mobCount--;
